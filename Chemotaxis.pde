@@ -15,17 +15,15 @@ void draw()
   //move and show the bacteria
   for (int i = 0; i < hoard.length; i++) {
     hoard[i].move();
-    hoard[i].show();
-    if (hoard[i].op < 250)
+    hoard[i].show();  
+    if (mousePressed == true){
+      if (hoard[i].op >= 0)
+        hoard[i].op -= 2;
+    }
+    else if (hoard[i].op < 250)
       hoard[i].op += 2;
   }
 }  
-void mouseDragged() {
-  for (int i = 0; i < hoard.length; i++){
-    if (hoard[i].op >= 0)
-      hoard[i].op -= 2;
-  }
-}
 class Bacteria    
 {     
   //lots of java!   
